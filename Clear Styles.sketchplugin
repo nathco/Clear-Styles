@@ -1,0 +1,56 @@
+// Sketch Plugin: Clear Styles (option command /)
+// Source: github.com/NathanRutzky/Clear-Styles
+// Version: 1.0
+
+(function() {
+
+    for (var i=0; i<[selection count]; i++) {
+    
+        var layer = [selection objectAtIndex:i]
+        var array = ['borders','fills','shadows','innerShadows']
+        var color = [[MSColor alloc] init]
+        
+        [color setRed:0]
+        [color setGreen:0]
+        [color setBlue:0]
+        [color setAlpha:1]
+        
+        array.forEach(function(s) {
+        
+            var styles = [layer style][s]()
+        
+            for (var i=[styles count]; i>=0; i--) {
+            
+                [styles removeStylePartAtIndex:i]
+            }
+            
+            [[[layer style] blur] setType:0]
+            [[[layer style] blur] setRadius:'auto']
+            [[[layer style] blur] setMotionAngle:'auto']
+            [[[layer style] blur] setIsEnabled:0]
+            [[[layer style] reflection] setStrength:'auto']
+            [[[layer style] reflection] setDistance:'auto']
+            [[[layer style] reflection] setIsEnabled:0]
+            [[[layer style] contextSettings] setBlendMode:0]
+            [[[layer style] contextSettings] setOpacity:1]        
+        })
+        
+        if ([layer class] == MSTextLayer) {
+    
+            [layer setTextColor:color]
+            [layer setTextBehaviour:0]
+            [layer setLineSpacing:'auto']
+            [layer setTextAlignment:'auto']
+            [layer addAttribute:NSUnderlineStyleAttributeName value:NSUnderlineStyleNone]
+            [layer addAttribute:NSStrikethroughStyleAttributeName value:NSUnderlineStyleNone]
+        }
+        
+        else {
+        
+            [[[layer style] fills] addNewStylePart]	    
+        }    
+    
+        [layer setIsSelected:0]	  
+    }
+
+})();
