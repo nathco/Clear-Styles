@@ -1,6 +1,7 @@
-// Sketch Plugin: Clear Styles (option command /)
-// Source: github.com/NathanRutzky/Clear-Styles
-// Version: 1.0
+// Plugin: Clear Styles (option command /)
+// Source: github.com/nathco/Clear-Styles
+// Author: Nathan Rutzky
+// Update: 1.0
 
 (function() {
 
