@@ -1,0 +1,23 @@
+{
+	"author": "Nathan Rutzky",
+	"commands": [
+		{
+			"script": "script.cocoascript",
+			"handler": "onRun",
+			"shortcut": "cmd /",
+			"name": "Clear Styles",
+			"identifier": "clear styles"
+		}
+	],
+	"menu": {
+		"isRoot": true,
+		"items": [
+			"clear styles"
+		]
+	},
+	"identifier": "com.github.clear_styles.nathco",
+	"version": "1.0",
+	"description": "Original code from github.com/nathco/Clear-Styles .",
+	"authorEmail": "fradser@gmail.com",
+	"name": "Clear Styles"
+}
